@@ -1,32 +1,66 @@
 package com.stock.stockmasterpro.controller;
 
 import com.stock.stockmasterpro.model.Produit;
+import com.stock.stockmasterpro.service.ProduitService;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+
 import java.io.IOException;
-import java.util.ArrayList;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @WebServlet("/catalogue")
 public class CatalogueServlet extends HttpServlet {
 
+    private ProduitService produitService = new ProduitService();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        List<Produit> listeProduits = new ArrayList<>();
-        listeProduits.add(new Produit(1, "Clavier", 25.0));
-        listeProduits.add(new Produit(2, "Souris", 15.5));
-        listeProduits.add(new Produit(3, "Écran", 199.99));
-        listeProduits.add(new Produit(4, "PC Portable", 899.0));
 
+        List<Produit> listeProduits = produitService.getAllProduits();
         request.setAttribute("listeProduits", listeProduits);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/vues/catalogue.jsp");
+
+
+        Cookie[] cookies = request.getCookies();
+        String lastVisit = null;
+
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if ("lastVisit".equals(cookie.getName())) {
+                    lastVisit = cookie.getValue();
+                }
+            }
+        }
+
+
+        request.setAttribute("lastVisit", lastVisit);
+
+
+
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        String now = LocalDateTime.now().format(formatter);
+
+        Cookie newCookie = new Cookie("lastVisit", now);
+        newCookie.setMaxAge(60 * 60 * 24); // 24 heures
+        response.addCookie(newCookie);
+
+
+
+
+        RequestDispatcher dispatcher =
+                request.getRequestDispatcher("/WEB-INF/vues/catalogue.jsp");
+
         dispatcher.forward(request, response);
     }
 }

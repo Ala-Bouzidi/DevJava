@@ -1,5 +1,6 @@
 package com.stock.stockmasterpro.controller;
 
+import com.stock.stockmasterpro.dao.ProduitDAO;
 import com.stock.stockmasterpro.model.Produit;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -26,11 +27,8 @@ public class CatalogueServlet extends HttpServlet {
         // -------------------------------
         // 1️⃣ PRODUCTS
         // -------------------------------
-        List<Produit> listeProduits = new ArrayList<>();
-        listeProduits.add(new Produit(1, "Clavier", 25.0));
-        listeProduits.add(new Produit(2, "Souris", 15.5));
-        listeProduits.add(new Produit(3, "Écran", 199.99));
-        listeProduits.add(new Produit(4, "PC Portable", 899.0));
+        ProduitDAO dao = new ProduitDAO();
+        List<Produit> listeProduits = dao.findAll();
 
         request.setAttribute("listeProduits", listeProduits);
 

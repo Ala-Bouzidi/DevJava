@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ProduitDAOMock implements ProduitDAO {
+public class ProduitDAOMock extends ProduitDAO {
     @Override
     public List<Produit> findAll() {
         List<Produit> produits = new ArrayList<>();

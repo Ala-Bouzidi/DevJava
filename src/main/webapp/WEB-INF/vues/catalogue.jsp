@@ -405,7 +405,16 @@
                 <span>
                     <strong>Session:</strong>
                     ${sessionScope.user != null ? 'Active' : 'Inactive'} |
-                    <strong>Dernier accès:</strong> ${sessionScope.lastAccess != null ? sessionScope.lastAccess : 'N/A'}
+                    <strong>Dernière visite:</strong>
+                    <c:choose>
+                        <c:when test="${not empty lastVisit}">
+                            ${lastVisit}
+                        </c:when>
+                        <c:otherwise>
+                            Première visite
+                        </c:otherwise>
+                    </c:choose>
+
                 </span>
             </p>
         </div>
@@ -416,7 +425,7 @@
     <div class="footer">
         <p>© 2026 StockMaster Pro - Système de Gestion de Stock</p>
         <p style="margin-top: 5px; font-size: 12px;">
-            Développé avec 🛒 pour la gestion professionnelle
+
         </p>
     </div>
 

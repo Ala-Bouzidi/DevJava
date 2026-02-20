@@ -63,7 +63,7 @@
         <button type="submit">Se connecter</button>
     </form>
     <p style="text-align: center; margin-top: 20px; color: #666;">
-        Test: admin / 123
+
     </p>
 </div>
 </body>

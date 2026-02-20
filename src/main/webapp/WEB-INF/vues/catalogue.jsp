@@ -305,7 +305,7 @@
 
 <div class="container">
 
-    <!-- ========== EN-TÊTE AVEC UTILISATEUR CONNECTÉ ========== -->
+
     <div class="header">
         <h1>StockMaster Pro</h1>
 
@@ -320,7 +320,7 @@
         </div>
     </div>
 
-    <!-- ========== CONTENU PRINCIPAL ========== -->
+
     <div class="content">
 
         <h2 class="section-title">Catalogue des produits</h2>
@@ -348,7 +348,7 @@
             </div>
         </div>
 
-        <!-- TABLEAU DES PRODUITS -->
+
         <div class="table-container">
             <table>
                 <thead>
@@ -398,7 +398,7 @@
             </table>
         </div>
 
-        <!-- Informations complémentaires -->
+
         <div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #4CAF50;">
             <p style="display: flex; align-items: center; gap: 10px; color: #666;">
                 <span style="font-size: 20px;">ℹ️</span>
@@ -421,9 +421,9 @@
 
     </div>
 
-    <!-- ========== PIED DE PAGE ========== -->
+
     <div class="footer">
-        <p>© 2026 StockMaster Pro - Système de Gestion de Stock</p>
+        <p> 2026 StockMaster Pro</p>
         <p style="margin-top: 5px; font-size: 12px;">
 
         </p>
@@ -431,14 +431,14 @@
 
 </div>
 
-<!-- Script pour la déconnexion automatique (optionnel) -->
+
 <script>
-    // Afficher l'heure de dernière connexion
+
     document.addEventListener('DOMContentLoaded', function() {
         console.log('Catalogue chargé - Utilisateur: ${sessionScope.user}');
     });
 
-    // Confirmation avant déconnexion
+
     const logoutBtn = document.querySelector('.logout-btn');
     if(logoutBtn) {
         logoutBtn.addEventListener('click', function(e) {

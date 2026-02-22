@@ -20,7 +20,7 @@ public class AuthFilter implements Filter {
         String uri = req.getRequestURI();
         String contextPath = req.getContextPath();
 
-        // Pages publiques (sans authentification)
+
         boolean isLoginPage = uri.endsWith("login.jsp");
         boolean isLoginServlet = uri.endsWith("/connexion");
 

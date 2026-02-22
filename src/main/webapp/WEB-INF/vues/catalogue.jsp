@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StockMaster Pro - Catalogue</title>
     <style>
-        /* ========== RESET & BASE ========== */
+
         * {
             margin: 0;
             padding: 0;
@@ -21,7 +21,7 @@
             padding: 20px;
         }
 
-        /* ========== CONTENEUR PRINCIPAL ========== */
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -43,7 +43,7 @@
             }
         }
 
-        /* ========== EN-TÊTE AVEC UTILISATEUR ========== */
+
         .header {
             background: linear-gradient(135deg, #4CAF50, #45a049);
             color: white;
@@ -117,7 +117,7 @@
             font-size: 16px;
         }
 
-        /* ========== SECTION CONTENU ========== */
+
         .content {
             padding: 30px;
         }
@@ -138,7 +138,7 @@
             font-size: 28px;
         }
 
-        /* ========== TABLEAU ========== */
+
         .table-container {
             overflow-x: auto;
             border-radius: 10px;
@@ -180,7 +180,7 @@
             box-shadow: 0 2px 8px rgba(76, 175, 80, 0.1);
         }
 
-        /* Style spécial pour les colonnes */
+
         td:first-child {
             font-weight: bold;
             color: #4CAF50;
@@ -197,7 +197,7 @@
             font-weight: normal;
         }
 
-        /* ========== MESSAGE AUCUN PRODUIT ========== */
+
         .empty-message {
             text-align: center;
             padding: 50px;
@@ -216,7 +216,7 @@
             font-size: 48px;
         }
 
-        /* ========== PIED DE PAGE ========== */
+
         .footer {
             background: #f8f9fa;
             padding: 20px 30px;
@@ -230,7 +230,7 @@
             color: #4CAF50;
         }
 
-        /* ========== LOADING SPINNER ========== */
+
         .loading {
             display: none;
             text-align: center;
@@ -252,7 +252,7 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* ========== RESPONSIVE ========== */
+
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
@@ -274,7 +274,7 @@
             }
         }
 
-        /* ========== BADGES ET INDICATEURS ========== */
+
         .badge {
             background: #4CAF50;
             color: white;
@@ -325,7 +325,7 @@
 
         <h2 class="section-title">Catalogue des produits</h2>
 
-        <!-- Statistiques (optionnel) -->
+
         <div class="stats">
             <div class="stats-item">
                 <span>📊 Total produits:</span>

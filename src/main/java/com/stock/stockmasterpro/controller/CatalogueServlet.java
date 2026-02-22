@@ -24,17 +24,13 @@ public class CatalogueServlet extends HttpServlet {
                          HttpServletResponse response)
             throws ServletException, IOException {
 
-        // -------------------------------
-        // 1️⃣ PRODUCTS
-        // -------------------------------
+
         ProduitDAO dao = new ProduitDAO();
         List<Produit> listeProduits = dao.findAll();
 
         request.setAttribute("listeProduits", listeProduits);
 
-        // -------------------------------
-        // 2️⃣ COOKIE MANAGEMENT
-        // -------------------------------
+
 
         String lastVisit = null;
 
@@ -49,7 +45,7 @@ public class CatalogueServlet extends HttpServlet {
 
         request.setAttribute("lastVisit", lastVisit);
 
-        // ⚠ SAFE FORMAT WITHOUT SPACES
+
         DateTimeFormatter formatter =
                 DateTimeFormatter.ofPattern("dd-MM-yyyy_HH-mm-ss");
 
@@ -64,9 +60,7 @@ public class CatalogueServlet extends HttpServlet {
 
         response.addCookie(newCookie);
 
-        // -------------------------------
-        // 3️⃣ FORWARD TO JSP
-        // -------------------------------
+
 
         RequestDispatcher dispatcher =
                 request.getRequestDispatcher("/WEB-INF/vues/catalogue.jsp");
